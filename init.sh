@@ -5,5 +5,5 @@ if ! command -v python >/dev/null 2>&1; then
 fi
 
 cd "$(dirname "$0")"
-source venv/bin/activate
-python3 main.py
+pip3 install requirements.txt
+python3 -u main.py
