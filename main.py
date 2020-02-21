@@ -56,7 +56,7 @@ def process_queue_message(queue, table):
             body = json.loads(message.body)
             print('INFO: Message body: ', body)
             vote = body['Vote']
-        except (KeyError, ValueError):
+        except (KeyError, ValueError, TypeError):
             print('ERROR: Malformed message with ID', message.message_id, ', discarding.')
             message.delete()
             continue
